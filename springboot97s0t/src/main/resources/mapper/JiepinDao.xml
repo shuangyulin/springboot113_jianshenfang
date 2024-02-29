@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.JiepinDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.JiepinEntity" id="jiepinMap">
+        <result property="jiepinbianhao" column="jiepinbianhao"/>
+        <result property="gonghao" column="gonghao"/>
+        <result property="yuangongxingming" column="yuangongxingming"/>
+        <result property="jiaolianleixing" column="jiaolianleixing"/>
+        <result property="jiaolianjiage" column="jiaolianjiage"/>
+        <result property="jiepinyuanyin" column="jiepinyuanyin"/>
+        <result property="jiepinshijian" column="jiepinshijian"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.JiepinVO" >
+		SELECT * FROM jiepin  jiepin         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.JiepinVO" >
+		SELECT  jiepin.* FROM jiepin  jiepin 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.JiepinView" >
+
+		SELECT  jiepin.* FROM jiepin  jiepin 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.JiepinView" >
+		SELECT * FROM jiepin  jiepin <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>

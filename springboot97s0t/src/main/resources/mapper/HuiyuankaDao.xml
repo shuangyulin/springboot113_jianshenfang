@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.HuiyuankaDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.HuiyuankaEntity" id="huiyuankaMap">
+        <result property="huiyuankabianhao" column="huiyuankabianhao"/>
+        <result property="huiyuankamingcheng" column="huiyuankamingcheng"/>
+        <result property="huiyuankaleixing" column="huiyuankaleixing"/>
+        <result property="huiyuankajiage" column="huiyuankajiage"/>
+        <result property="youxiaoshijian" column="youxiaoshijian"/>
+        <result property="xiaofeijine" column="xiaofeijine"/>
+        <result property="ticeqingkuang" column="ticeqingkuang"/>
+        <result property="huiyuanzhanghao" column="huiyuanzhanghao"/>
+        <result property="huiyuanxingming" column="huiyuanxingming"/>
+        <result property="beizhu" column="beizhu"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.HuiyuankaVO" >
+		SELECT * FROM huiyuanka  huiyuanka         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.HuiyuankaVO" >
+		SELECT  huiyuanka.* FROM huiyuanka  huiyuanka 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.HuiyuankaView" >
+
+		SELECT  huiyuanka.* FROM huiyuanka  huiyuanka 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.HuiyuankaView" >
+		SELECT * FROM huiyuanka  huiyuanka <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
